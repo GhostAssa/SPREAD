@@ -1,0 +1,303 @@
+@import "tailwindcss";
+
+/* ============================================================
+   SPREAD — "Lagos Lo-Fi" design tokens
+   Ported 1:1 from /full main screen/DESIGN.md and the Stitch
+   code.html mockups. Do not rename these tokens casually —
+   className strings across the app assume these exact names.
+   ============================================================ */
+
+@theme {
+  --color-surface: #f2fbff;
+  --color-surface-dim: #c2dfea;
+  --color-surface-bright: #f2fbff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #e4f7ff;
+  --color-surface-container: #d5f3fe;
+  --color-surface-container-high: #d0edf9;
+  --color-surface-container-highest: #cae7f3;
+  --color-on-surface: #011f27;
+  --color-on-surface-variant: #524535;
+  --color-inverse-surface: #18343d;
+  --color-inverse-on-surface: #dcf5ff;
+  --color-outline: #847562;
+  --color-outline-variant: #d6c3ae;
+  --color-surface-tint: #835500;
+  --color-primary: #835500;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #e39a20;
+  --color-on-primary-container: #573700;
+  --color-inverse-primary: #ffb954;
+  --color-secondary: #b6005b;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #d92974;
+  --color-on-secondary-container: #fffbff;
+  --color-tertiary: #106969;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #6ab5b5;
+  --color-on-tertiary-container: #004545;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #ffddb4;
+  --color-primary-fixed-dim: #ffb954;
+  --color-on-primary-fixed: #291800;
+  --color-on-primary-fixed-variant: #633f00;
+  --color-secondary-fixed: #ffd9e1;
+  --color-secondary-fixed-dim: #ffb1c6;
+  --color-on-secondary-fixed: #3f001b;
+  --color-on-secondary-fixed-variant: #8e0046;
+  --color-tertiary-fixed: #a4f0ef;
+  --color-tertiary-fixed-dim: #88d3d3;
+  --color-on-tertiary-fixed: #002020;
+  --color-on-tertiary-fixed-variant: #004f50;
+  --color-background: #f2fbff;
+  --color-on-background: #011f27;
+  --color-surface-variant: #cae7f3;
+  --color-sand: #e4e0d4;
+  --color-cream: #f4f1e7;
+  --color-sand-deep: #d5d0be;
+  --color-ink-band: #10262d;
+  --color-body-ink: #23302f;
+  --color-clay: #c0522e;
+  --color-indigo: #2a3d8f;
+  --color-plum: #7c3055;
+  --color-moss: #5e7a3a;
+  --color-amber: #ffb954;
+  --color-pink: #d92974;
+  --color-teal: #106969;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-body-ink);
+  overflow-x: hidden;
+}
+
+/* ---------- Font family utilities (Bricolage / Fira Sans / Space Mono) ---------- */
+.font-note,
+.font-shout-lg-mobile,
+.font-shout-lg,
+.font-headline-h2,
+.font-headline-h2-mobile {
+  font-family: var(--font-bricolage), sans-serif;
+}
+.font-body-md,
+.font-body-lg {
+  font-family: var(--font-fira-sans), sans-serif;
+}
+.font-eyebrow,
+.font-label-sm {
+  font-family: var(--font-space-mono), monospace;
+}
+
+/* ---------- Font size / weight / leading / tracking utilities ---------- */
+.text-shout-lg {
+  font-size: 142px;
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+.text-shout-lg-mobile {
+  font-size: 64px;
+  line-height: 0.94;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+.text-headline-h2 {
+  font-size: 70px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.text-headline-h2-mobile {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 700;
+}
+.text-body-lg {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.text-body-md {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.text-note {
+  font-size: 23px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+.text-eyebrow {
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+.text-label-sm {
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .md\:text-shout-lg {
+    font-size: 142px;
+    line-height: 0.94;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+  }
+  .md\:text-headline-h2 {
+    font-size: 70px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+}
+
+/* ---------- Hard "Ink Drop" elevation ---------- */
+.shadow-ink-sm,
+.brutal-shadow-sm {
+  box-shadow: 3px 3px 0px 0px var(--color-ink-band);
+}
+.shadow-ink-md,
+.brutal-shadow-md {
+  box-shadow: 7px 7px 0px 0px var(--color-ink-band);
+}
+.shadow-ink-lg,
+.brutal-shadow-lg {
+  box-shadow: 12px 12px 0px 0px var(--color-ink-band);
+}
+.brutal-shadow-sm,
+.brutal-shadow-md,
+.brutal-shadow-lg {
+  border: 2px solid var(--color-ink-band);
+}
+
+.btn-primary {
+  background-color: var(--color-amber);
+  border: 2px solid var(--color-ink-band);
+  box-shadow: 3px 3px 0px 0px var(--color-ink-band);
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  box-shadow: 5px 5px 0px 0px var(--color-ink-band);
+  transform: translate(-2px, -2px);
+}
+
+/* ---------- Scroll reveal ---------- */
+.rv {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.rv.active,
+.rv.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.rv.delay-100 {
+  transition-delay: 0.1s;
+}
+.rv.delay-200 {
+  transition-delay: 0.2s;
+}
+.rv.delay-300 {
+  transition-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Ticker / marquee ---------- */
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-clay);
+  border-bottom: 2px solid var(--color-ink-band);
+  border-top: 2px solid var(--color-ink-band);
+}
+.ticker {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ticker;
+  animation-duration: 30s;
+}
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker {
+    animation-play-state: paused;
+  }
+}
+
+/* ---------- Scanline (CRT "Studio" card) ---------- */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fact-card {
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s ease;
+}
+.fact-card:hover {
+  transform: translateY(-5px) rotate(-1deg);
+  box-shadow: 12px 12px 0px 0px var(--color-ink-band);
+}
+
+/* ---------- Timeline spine ---------- */
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px;
+  width: 4px;
+  background: var(--color-ink-band);
+  z-index: 0;
+}
+@media (min-width: 768px) {
+  .timeline-line::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

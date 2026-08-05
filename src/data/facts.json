@@ -1,0 +1,29 @@
+[
+  {
+    "id": "#4092",
+    "status": "verified",
+    "category": "Admin",
+    "chipColor": "clay",
+    "title": "Hostel D Renovation Funds Approved",
+    "body": "Contrary to rumors of budget cuts, the VC's office has officially signed off on the 50M Naira allocation for Hostel D plumbing and electrical overhauls starting next semester.",
+    "sources": ["SRC", "DOC"]
+  },
+  {
+    "id": "#4088",
+    "status": "verified",
+    "category": "Academics",
+    "chipColor": "plum",
+    "title": "Library Extension Hours Permanent",
+    "body": "The 24/7 library access trialed during the last exam period has been made permanent for all registered undergraduates, effective immediately.",
+    "sources": ["LIB"]
+  },
+  {
+    "id": "#4081",
+    "status": "debunked",
+    "category": "Fees",
+    "chipColor": "teal",
+    "title": "Tech Fee Hike for Freshmen",
+    "body": "Rumors circulating on WhatsApp about a 20k mandatory \"tech integration fee\" for incoming students are entirely false. No such fee exists in the current approved senate budget.",
+    "sources": ["BUR", "SEN"]
+  }
+]

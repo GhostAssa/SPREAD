@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "tech-hub-launch-event",
+    "title": "Tech Hub Launch Event",
+    "date": "2026-08-08",
+    "location": "North Campus Innovation Center",
+    "category": "Tech",
+    "chipColor": "indigo",
+    "description": "The long-awaited Tech Hub officially opens its doors, moved from Wednesday to Friday after a delay in final wiring inspections. Expect demo booths, free swag, and a keynote from the IT Services director."
+  },
+  {
+    "slug": "student-union-elections",
+    "title": "Student Union Elections",
+    "date": "2026-08-15",
+    "location": "Great Hall",
+    "category": "Campus Politics",
+    "chipColor": "teal",
+    "description": "Postponed from earlier this month pending a review of the voter roll, SRC elections are back on the calendar. Polling booths open campus-wide from 8am to 6pm."
+  },
+  {
+    "slug": "library-late-night-study-jam",
+    "title": "Library Late-Night Study Jam",
+    "date": "2026-08-20",
+    "location": "Main Library, 24/7 Wing",
+    "category": "Academics",
+    "chipColor": "plum",
+    "description": "Free coffee, quiet floors, and extended IT support to celebrate the now-permanent 24/7 library hours. Runs straight through to sunrise."
+  }
+]

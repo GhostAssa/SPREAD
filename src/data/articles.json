@@ -1,0 +1,159 @@
+[
+  {
+    "slug": "union-leaders-demand-transparency-in-fee-allocation",
+    "title": "Union Leaders Demand Transparency in Fee Allocation",
+    "size": "feature",
+    "theme": "light",
+    "category": "Campus Politics",
+    "chipColor": "teal",
+    "verified": true,
+    "excerpt": "A breakdown of the recent town hall meeting where student representatives confronted administration over the opaque handling of technology fees.",
+    "authorName": "Adebayo T.",
+    "authorAvatarUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDzmAz77kxRht8bTxxgu70Wi5sgCi8teW3X0gmk4DA136H-2pk6rV4qkeqkU5mEJq8R2gWybgSZxPyOUoy0JaH6z78S-gFFeUhoXLd37VYBM2ZxqFCQMmYq5CcwPq5g8tPWEbOXqQ7Iv-0NvrAYJjBaEJz-d9y9UWuT8V70Mb9pc8HpU0jL1Uygv5zu_13tZlpNMxK4BiGk1BH8SoSIhPZcz7BEBpsaK5bIl9LLNNGPXyUXDde2UW4",
+    "publishedAtLabel": "Oct 24, 2024",
+    "timeAgoLabel": "2 Hours Ago",
+    "heroImageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuBjXIQjLqGfO4Nh-Ru21gxIbAwI16huwhkKAQWA5y6PnuIC3Miolo3bHPw251DFy51vNS4SextGMDyFX5bjOHCeXw2tHAwFroeNQug_RQjeXqGTYlyieJ5FKFfqsy4hLk8fjSy3JBhEQ2W8ltHqAUymbCwA7_zDOknejWV9o4dK6H3QB_cyEAStRya96s-cS31eqbIMwZTK0TtO8DfVO5ISipFjH_3eGAiZFaMpMuka5ElnPWhe_H0",
+    "heroImageAlt": "A massive crowd of students protesting on a university campus at sunset, holding handmade cardboard signs demanding transparency.",
+    "body": [
+      {
+        "type": "lead",
+        "text": "The student union has issued an ultimatum to the university administration, demanding a full public audit of the recently introduced \"Campus Development Fee\" within the next 48 hours."
+      },
+      {
+        "type": "paragraph",
+        "text": "Tensions reached a boiling point on Tuesday afternoon when over 500 students gathered outside the administrative block. The demonstration, organized by the Student Representative Council (SRC), was sparked by leaked documents suggesting that a significant portion of the new fees was being diverted from the promised library renovations to executive travel expenses."
+      },
+      {
+        "type": "heading",
+        "text": "\"We are not ATMs\""
+      },
+      {
+        "type": "paragraph",
+        "text": "\"We were told this fee was essential for upgrading our failing IT infrastructure and expanding study spaces,\" said SRC President, Amara Nwosu, speaking to the crowd through a megaphone. \"Instead, we are seeing zero improvements while management authorizes luxury retreats. We are students, not ATMs.\""
+      },
+      {
+        "type": "quote",
+        "text": "The lack of transparency is no longer an oversight; it's a deliberate strategy to avoid accountability.",
+        "attribution": "Amara Nwosu"
+      },
+      {
+        "type": "paragraph",
+        "text": "University spokesperson, Dr. Elias Mensah, released a brief statement late Tuesday denying the allegations of misappropriation. He stated that the leaked documents were \"preliminary drafts\" and did not reflect the final budget allocations. He assured students that a detailed breakdown would be provided at the end of the fiscal quarter."
+      },
+      {
+        "type": "paragraph",
+        "text": "However, the union leadership remains unconvinced, pointing out that previous promises of financial transparency have repeatedly fallen through."
+      }
+    ],
+    "breakdown": [
+      "Fee introduced: Sep 2024 (₦25,000/student)",
+      "Promised allocation: 70% Facilities, 30% IT",
+      "Leaked docs claim: 40% diverted to \"Admin Overhead\""
+    ],
+    "relatedSlug": "library-ceiling-collapse-halts-midterms"
+  },
+  {
+    "slug": "underground-food-scene-at-hall-3",
+    "size": "compact",
+    "theme": "light",
+    "category": "Life",
+    "chipColor": "clay",
+    "verified": true,
+    "title": "The Underground Food Scene at Hall 3",
+    "excerpt": "Where to find the best midnight snacks when the official cafeterias close.",
+    "authorName": "Kemi A.",
+    "authorAvatarUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDzmAz77kxRht8bTxxgu70Wi5sgCi8teW3X0gmk4DA136H-2pk6rV4qkeqkU5mEJq8R2gWybgSZxPyOUoy0JaH6z78S-gFFeUhoXLd37VYBM2ZxqFCQMmYq5CcwPq5g8tPWEbOXqQ7Iv-0NvrAYJjBaEJz-d9y9UWuT8V70Mb9pc8HpU0jL1Uygv5zu_13tZlpNMxK4BiGk1BH8SoSIhPZcz7BEBpsaK5bIl9LLNNGPXyUXDde2UW4",
+    "publishedAtLabel": "Oct 24, 2024",
+    "timeAgoLabel": "4 Hours Ago",
+    "heroImageAlt": "",
+    "body": [
+      {
+        "type": "lead",
+        "text": "When the official cafeterias shut their doors at 9pm, a whole second economy of food wakes up around Hall 3."
+      },
+      {
+        "type": "paragraph",
+        "text": "From roadside suya stands to a corridor famous for its indomie-and-egg combos, students have quietly kept this scene running for years — mostly by word of mouth. We asked around to map the essentials."
+      },
+      {
+        "type": "paragraph",
+        "text": "Vendors say demand has only grown since exam season pushed more students into late-night reading rooms with nowhere official to eat."
+      }
+    ],
+    "breakdown": [
+      "Peak hours: 10pm – 1am",
+      "Most popular spot: the Hall 3 back gate",
+      "Average price: ₦500–₦1,200 per meal"
+    ]
+  },
+  {
+    "slug": "new-wifi-nodes-installed-in-north-campus",
+    "size": "compact",
+    "theme": "dark",
+    "category": "Tech",
+    "chipColor": "indigo",
+    "verified": true,
+    "title": "New Wi-Fi Nodes Installed in North Campus",
+    "excerpt": "Speeds reportedly up by 40% according to early student speed tests.",
+    "authorName": "Tobi E.",
+    "authorAvatarUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDzmAz77kxRht8bTxxgu70Wi5sgCi8teW3X0gmk4DA136H-2pk6rV4qkeqkU5mEJq8R2gWybgSZxPyOUoy0JaH6z78S-gFFeUhoXLd37VYBM2ZxqFCQMmYq5CcwPq5g8tPWEbOXqQ7Iv-0NvrAYJjBaEJz-d9y9UWuT8V70Mb9pc8HpU0jL1Uygv5zu_13tZlpNMxK4BiGk1BH8SoSIhPZcz7BEBpsaK5bIl9LLNNGPXyUXDde2UW4",
+    "publishedAtLabel": "Oct 23, 2024",
+    "timeAgoLabel": "1 Day Ago",
+    "heroImageAlt": "",
+    "body": [
+      {
+        "type": "lead",
+        "text": "IT Services has quietly rolled out a new bank of Wi-Fi nodes across North Campus hostels, and early speed tests from students are promising."
+      },
+      {
+        "type": "paragraph",
+        "text": "Informal tests shared in student group chats show download speeds up roughly 40% over the old access points, with far fewer dropped connections during peak evening hours."
+      },
+      {
+        "type": "paragraph",
+        "text": "IT Services says the rollout will extend to South Campus hostels next semester, pending budget approval."
+      }
+    ],
+    "breakdown": [
+      "Nodes installed: 24",
+      "Coverage: North Campus hostels A–D",
+      "South Campus rollout: planned next semester"
+    ]
+  },
+  {
+    "slug": "library-ceiling-collapse-halts-midterms",
+    "size": "compact",
+    "theme": "light",
+    "category": "Facilities",
+    "chipColor": "clay",
+    "verified": true,
+    "title": "Library Ceiling Collapse Halts Midterms",
+    "excerpt": "A section of the main library's reading hall was closed after water damage brought part of the ceiling down mid-exam week.",
+    "authorName": "Fisayo O.",
+    "authorAvatarUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDzmAz77kxRht8bTxxgu70Wi5sgCi8teW3X0gmk4DA136H-2pk6rV4qkeqkU5mEJq8R2gWybgSZxPyOUoy0JaH6z78S-gFFeUhoXLd37VYBM2ZxqFCQMmYq5CcwPq5g8tPWEbOXqQ7Iv-0NvrAYJjBaEJz-d9y9UWuT8V70Mb9pc8HpU0jL1Uygv5zu_13tZlpNMxK4BiGk1BH8SoSIhPZcz7BEBpsaK5bIl9LLNNGPXyUXDde2UW4",
+    "publishedAtLabel": "Oct 21, 2024",
+    "timeAgoLabel": "3 Days Ago",
+    "heroImageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuD6b9hlNwR9XOnDk8H2qky1UT2VtbY5tng2F0BrMcdyvsHe1yiHLFMz3IyDQSUlpc4RCXLWnwAqEziGP173pMtc9yWRLo1VwMcvDGluruGBAYAVPIHXI_rlpu1T5YF4qN5CV0hWsMn7tXnphKnkIWr4vQIU_tpd5H7jDcWswOC2t8WgkV6pB-BiLquD_3vquvV6V_BwzkicD_sZrRhBDl6p3znmd37lY-ZJBNn5cZcuNqS2ZCG6fWw",
+    "heroImageAlt": "A dilapidated university library interior with water-damaged ceiling and half-empty shelves.",
+    "body": [
+      {
+        "type": "lead",
+        "text": "Facilities management confirmed that a section of the main library's reading hall was closed indefinitely after weeks of unreported water damage caused part of the ceiling to give way."
+      },
+      {
+        "type": "paragraph",
+        "text": "No injuries were reported, as the collapse occurred just after closing hours. Students who had raised concerns about visible cracks and leaks earlier in the semester say maintenance requests went unanswered for months."
+      },
+      {
+        "type": "paragraph",
+        "text": "The affected wing will remain closed for the rest of the exam period, with the university offering the ICT center as an overflow study space."
+      }
+    ],
+    "breakdown": [
+      "Reports of leaks first filed: Aug 2024",
+      "Section closed: Oct 21, 2024",
+      "Estimated repair window: 6–8 weeks"
+    ],
+    "relatedSlug": "union-leaders-demand-transparency-in-fee-allocation"
+  }
+]

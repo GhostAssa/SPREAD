@@ -1,0 +1,937 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Spread - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Fira+Sans:wght@400;500&amp;family=Space+Mono:wght@700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "clay": "#C0522E",
+                      "moss": "#5E7A3A",
+                      "primary-fixed-dim": "#ffb954",
+                      "surface-container-high": "#d0edf9",
+                      "tertiary-fixed-dim": "#88d3d3",
+                      "on-surface-variant": "#524535",
+                      "on-tertiary-container": "#004545",
+                      "inverse-on-surface": "#dcf5ff",
+                      "surface-bright": "#f2fbff",
+                      "secondary-fixed-dim": "#ffb1c6",
+                      "on-secondary-fixed": "#3f001b",
+                      "secondary-fixed": "#ffd9e1",
+                      "error-container": "#ffdad6",
+                      "cream": "#F4F1E7",
+                      "surface": "#f2fbff",
+                      "tertiary-container": "#6ab5b5",
+                      "on-tertiary-fixed": "#002020",
+                      "secondary": "#b6005b",
+                      "sand-deep": "#D5D0BE",
+                      "tertiary": "#106969",
+                      "surface-container-highest": "#cae7f3",
+                      "surface-dim": "#c2dfea",
+                      "on-primary-container": "#573700",
+                      "primary-fixed": "#ffddb4",
+                      "on-surface": "#011f27",
+                      "on-secondary-container": "#fffbff",
+                      "indigo": "#2A3D8F",
+                      "on-secondary": "#ffffff",
+                      "background": "#f2fbff",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#291800",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-variant": "#cae7f3",
+                      "ink-band": "#10262D",
+                      "on-secondary-fixed-variant": "#8e0046",
+                      "surface-container": "#d5f3fe",
+                      "sand": "#E4E0D4",
+                      "outline-variant": "#d6c3ae",
+                      "body-ink": "#23302F",
+                      "on-error-container": "#93000a",
+                      "on-background": "#011f27",
+                      "surface-tint": "#835500",
+                      "tertiary-fixed": "#a4f0ef",
+                      "on-tertiary-fixed-variant": "#004f50",
+                      "outline": "#847562",
+                      "primary-container": "#e39a20",
+                      "secondary-container": "#d92974",
+                      "plum": "#7C3055",
+                      "inverse-surface": "#18343d",
+                      "inverse-primary": "#ffb954",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#e4f7ff",
+                      "on-primary-fixed-variant": "#633f00",
+                      "primary": "#835500",
+                      "amber": "#FFB954",
+                      "pink": "#D92974",
+                      "teal": "#106969"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "26px",
+                      "section-v": "94px",
+                      "gap-list": "24px",
+                      "max-width": "1180px",
+                      "gap-grid": "40px",
+                      "unit": "4px",
+                      "section-v-mobile": "66px"
+              },
+              "fontFamily": {
+                      "note": ["Bricolage Grotesque", "sans-serif"],
+                      "label-sm": ["Space Mono", "monospace"],
+                      "shout-lg-mobile": ["Bricolage Grotesque", "sans-serif"],
+                      "headline-h2": ["Bricolage Grotesque", "sans-serif"],
+                      "body-md": ["Fira Sans", "sans-serif"],
+                      "body-lg": ["Fira Sans", "sans-serif"],
+                      "eyebrow": ["Space Mono", "monospace"],
+                      "headline-h2-mobile": ["Bricolage Grotesque", "sans-serif"],
+                      "shout-lg": ["Bricolage Grotesque", "sans-serif"]
+              },
+              "fontSize": {
+                      "note": ["23px", { "lineHeight": "1.25", "fontWeight": "600" }],
+                      "label-sm": ["11px", { "lineHeight": "1.0", "fontWeight": "700" }],
+                      "shout-lg-mobile": ["64px", { "lineHeight": "0.94", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                      "headline-h2": ["70px", { "lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "eyebrow": ["13px", { "lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "700" }],
+                      "headline-h2-mobile": ["40px", { "lineHeight": "1.0", "fontWeight": "700" }],
+                      "shout-lg": ["142px", { "lineHeight": "0.94", "letterSpacing": "-0.04em", "fontWeight": "800" }]
+              },
+              "boxShadow": {
+                  "ink-sm": "3px 3px 0px 0px var(--tw-shadow-color)",
+                  "ink-md": "7px 7px 0px 0px var(--tw-shadow-color)",
+                  "ink-lg": "12px 12px 0px 0px var(--tw-shadow-color)",
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.cream');
+            color: theme('colors.body-ink');
+            overflow-x: hidden;
+        }
+
+        .shadow-ink-sm { --tw-shadow-color: theme('colors.ink-band'); box-shadow: 3px 3px 0px 0px var(--tw-shadow-color); }
+        .shadow-ink-md { --tw-shadow-color: theme('colors.ink-band'); box-shadow: 7px 7px 0px 0px var(--tw-shadow-color); }
+        .shadow-ink-lg { --tw-shadow-color: theme('colors.ink-band'); box-shadow: 12px 12px 0px 0px var(--tw-shadow-color); }
+
+        .btn-primary {
+            background-color: theme('colors.amber');
+            border: 2px solid theme('colors.ink-band');
+            box-shadow: 3px 3px 0px 0px theme('colors.ink-band');
+            transition: all 0.2s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 5px 5px 0px 0px theme('colors.ink-band');
+            transform: translate(-2px, -2px);
+        }
+
+        /* Scroll Reveal */
+        .rv {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .rv.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Ticker */
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background-color: theme('colors.clay');
+            border-bottom: 2px solid theme('colors.ink-band');
+            border-top: 2px solid theme('colors.ink-band');
+        }
+        .ticker {
+            display: inline-block;
+            white-space: nowrap;
+            padding-right: 100%;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-name: ticker;
+            animation-duration: 30s;
+        }
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        /* Scanline for Studio Card */
+        .scanlines {
+            position: relative;
+            overflow: hidden;
+        }
+        .scanlines::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(18, 16, 16, 0) 50%,
+                rgba(0, 0, 0, 0.1) 50%
+            );
+            background-size: 100% 4px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        /* Parallax utility classes */
+        .parallax-bg-slow { transform: translateY(var(--scroll-y, 0px)); }
+        .parallax-bg-fast { transform: translateY(calc(var(--scroll-y, 0px) * 1.5)); }
+        
+        .fact-card {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+        }
+        .fact-card:hover {
+            transform: translateY(-5px) rotate(-1deg);
+            --tw-shadow-color: theme('colors.ink-band'); 
+            box-shadow: 12px 12px 0px 0px var(--tw-shadow-color);
+        }
+        
+        /* Timeline line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 24px;
+            width: 4px;
+            background: theme('colors.ink-band');
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased font-body-md">
+<!-- TopAppBar -->
+<header class="bg-cream border-b-2 border-ink-band w-full sticky top-0 z-50 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center max-w-[1180px] mx-auto px-gutter py-4">
+<a class="font-shout-lg-mobile text-shout-lg-mobile md:font-shout-lg md:text-shout-lg text-ink-band tracking-tight" href="#">Spread</a>
+<nav class="hidden md:flex gap-8 items-center font-eyebrow text-eyebrow uppercase tracking-widest">
+<a class="text-clay font-bold border-b-2 border-clay pb-1 hover:text-plum transition-transform hover:-translate-y-0.5" href="#">News</a>
+<a class="text-ink-band opacity-80 hover:text-plum transition-transform hover:-translate-y-0.5" href="#">Campus</a>
+<a class="text-ink-band opacity-80 hover:text-plum transition-transform hover:-translate-y-0.5" href="#">Facts</a>
+<a class="text-ink-band opacity-80 hover:text-plum transition-transform hover:-translate-y-0.5" href="#">Life</a>
+</nav>
+<button class="btn-primary font-eyebrow text-eyebrow uppercase tracking-widest px-6 py-3 rounded-full text-ink-band">
+                Join Broadcast
+            </button>
+</div>
+</header>
+<!-- Ticker -->
+<div class="ticker-wrap py-2 z-40 relative">
+<div class="ticker font-eyebrow text-eyebrow uppercase tracking-widest text-cream">
+<span class="mx-4 text-ink-band material-symbols-outlined align-middle">campaign</span>
+            LIVE: STUDENT UNION ELECTIONS POSTPONED
+            <span class="mx-4 text-ink-band material-symbols-outlined align-middle">campaign</span>
+            NEW CAFETERIA PRICES ANNOUNCED
+            <span class="mx-4 text-ink-band material-symbols-outlined align-middle">campaign</span>
+            TECH HUB LAUNCH EVENT MOVED TO FRIDAY
+            <span class="mx-4 text-ink-band material-symbols-outlined align-middle">campaign</span>
+            LIBRARY HOURS EXTENDED FOR EXAMS
+        </div>
+</div>
+<!-- Hero Parallax Cluster -->
+<section class="relative min-h-[921px] bg-sand overflow-hidden px-gutter py-section-v-mobile md:py-section-v flex items-center justify-center">
+<!-- Background SVG Motif -->
+<svg class="absolute top-0 right-0 w-full h-full opacity-20 pointer-events-none" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+<path class="text-clay" d="M0,500 Q250,200 500,500 T1000,500" fill="none" stroke="currentColor" stroke-width="40"></path>
+<circle class="text-plum" cx="200" cy="800" fill="currentColor" r="100"></circle>
+<rect class="text-moss" fill="currentColor" height="150" transform="rotate(45 875 175)" width="150" x="800" y="100"></rect>
+</svg>
+<div class="max-w-[1180px] w-full mx-auto relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gap-grid">
+<div class="md:col-span-7 flex flex-col justify-center rv active">
+<span class="font-eyebrow text-eyebrow text-clay uppercase tracking-widest mb-4 inline-block bg-cream border-2 border-ink-band px-3 py-1 w-max rounded-full shadow-ink-sm">The Source of Truth</span>
+<h1 class="font-shout-lg-mobile text-shout-lg-mobile md:font-shout-lg md:text-shout-lg text-ink-band leading-none mb-6">
+                    HUMAN<br>VERIFIED<br>BROADCAST.
+                </h1>
+<p class="font-body-lg text-body-lg text-body-ink max-w-md mb-8 border-l-4 border-amber pl-4">
+                    The unfiltered pulse of campus life. We separate the noise from the facts. Lagos Lo-Fi meets institutional truth.
+                </p>
+<div class="flex gap-4">
+<button class="btn-primary font-eyebrow text-eyebrow uppercase tracking-widest px-8 py-4 rounded-full text-ink-band">
+                        Read Latest
+                    </button>
+<button class="bg-cream border-2 border-ink-band font-eyebrow text-eyebrow uppercase tracking-widest px-8 py-4 rounded-full text-ink-band shadow-ink-sm hover:translate-y-[-2px] transition-transform">
+                        Submit Fact
+                    </button>
+</div>
+</div>
+<!-- Asymmetric Image / Card Cluster -->
+<div class="md:col-span-5 relative mt-12 md:mt-0 rv delay-200 active">
+<!-- Studio Card -->
+<div class="bg-sand-deep border-[3px] border-ink-band rounded-[22px] shadow-ink-lg p-2 absolute top-0 right-0 w-3/4 z-20 transform rotate-3">
+<div class="bg-ink-band rounded-[13px] h-64 overflow-hidden scanlines relative">
+<img class="w-full h-full object-cover mix-blend-luminosity opacity-80" data-alt="A gritty, high-contrast black and white photograph of students gathered around a notice board in a brutalist university campus setting. The lighting is harsh midday sun creating strong shadows. The style is raw, documentary, reminiscent of underground zines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEnGoxmqqPo9yvYJut49A2FbYtV2-qkBdu2jP9QrTZ0wos96dS3E5NLIzVMVf9wB1kgT0y2sa5oDbkxcs2zQcJ5AUuSaEj49HLk-ggSNa8RIRBuSRJu6D_y9pxDSk7z5Uc1ndNzCRzjj5UfL4WfvGBFtuuPTDPN48wt-26yp86N0WgolYDXqdZ6W2EiNJjoCT2oXhzHOZmHbYE2GvIBOr-lWpjSXpfhZ60St0BKumQB_ujtGMCE4s">
+<div class="absolute top-2 left-2 flex gap-2">
+<span class="w-3 h-3 rounded-full bg-error border border-ink-band"></span>
+<span class="font-label-sm text-label-sm text-error bg-cream px-1 uppercase">REC</span>
+</div>
+</div>
+</div>
+<!-- Floating Data Card -->
+<div class="bg-cream border-2 border-ink-band p-4 shadow-ink-md rounded-lg absolute bottom-10 left-0 w-2/3 z-30 transform -rotate-2">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-moss">verified</span>
+<h3 class="font-note text-note text-ink-band">Fact Check</h3>
+</div>
+<p class="font-body-md text-body-md text-body-ink">Hostel D renovation funds have been approved by the VC office.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Structural Divider -->
+<div class="w-full h-24 bg-ink-band relative overflow-hidden flex items-center justify-center"><div class="absolute inset-0 opacity-30" style="background-size: 20px 20px;"></div><div class="ticker-wrap bg-transparent border-none py-0"><div class="ticker font-headline-h2-mobile text-headline-h2-mobile md:font-headline-h2 md:text-headline-h2 text-cream uppercase tracking-tighter mix-blend-overlay py-4"><span class="mx-8">BREAKING NEWS: STUDENT UNION ELECTIONS POSTPONED</span><span class="mx-8">BREAKING NEWS: NEW CAFETERIA PRICES ANNOUNCED</span><span class="mx-8">BREAKING NEWS: TECH HUB LAUNCH EVENT MOVED TO FRIDAY</span><span class="mx-8">BREAKING NEWS: STUDENT UNION ELECTIONS POSTPONED</span><span class="mx-8">BREAKING NEWS: NEW CAFETERIA PRICES ANNOUNCED</span><span class="mx-8">BREAKING NEWS: TECH HUB LAUNCH EVENT MOVED TO FRIDAY</span></div></div></div>
+<!-- Latest Broadcasts (Bento Grid) -->
+<section class="bg-cream py-section-v-mobile md:py-section-v px-gutter">
+<div class="max-w-[1180px] mx-auto">
+<div class="flex justify-between items-end mb-12 rv active">
+<h2 class="font-headline-h2-mobile text-headline-h2-mobile md:font-headline-h2 md:text-headline-h2 text-ink-band">THE <br>LATEST</h2>
+<a class="font-eyebrow text-eyebrow text-clay border-b-2 border-clay pb-1 hover:text-plum transition-colors uppercase" href="#">View Archives</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gap-grid">
+<!-- Large Feature (Col span 8) -->
+<article class="md:col-span-8 bg-surface-container-highest border-2 border-ink-band shadow-ink-md rounded-xl overflow-hidden group rv active">
+<div class="h-80 border-b-2 border-ink-band overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant, high-energy shot of a campus protest or gathering, styled with a slight low-fi, printed poster texture. The scene is full of movement, with students holding colorful handmade signs. The lighting is bright and sunny, highlighting the diverse crowd." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm2fBaCNkP0A5RT0qRFfB9JvDzgXVBbDYAGDMPWuDvqSuJiEgaxDgE08zqaSDma_ofw2hWdEmKuieN-Ua1ASbxhMXNIULxbmYC2CItHKCTvsNi0OOs0xI3FNHFFNoqcmiKwj2jA8DdOLTU-dYzynQJ5IFwgrb4YD1Z_x4HyY6TqADsz71cEL6V3RefxWWW_1pan-fSo2KVhxagYN3_BxumUVSNZDOk8tBX6RII8Hc-6lFMUykuy0g">
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-teal text-cream font-label-sm text-label-sm px-3 py-1 rounded-full border border-ink-band shadow-ink-sm uppercase">Campus Politics</span>
+</div>
+</div>
+<div class="p-6 bg-sand">
+<h3 class="font-note text-note text-ink-band mb-3">Union Leaders Demand Transparency in Fee Allocation</h3>
+<p class="font-body-md text-body-md text-body-ink mb-4">A breakdown of the recent town hall meeting where student representatives confronted administration over the opaque handling of technology fees.</p>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-ink-band uppercase">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="">2 Hours Ago</span>
+</div>
+</div>
+</article>
+<!-- Stacked smaller items (Col span 4) -->
+<div class="md:col-span-4 flex flex-col gap-gap-grid">
+<article class="bg-cream border-2 border-ink-band shadow-ink-sm rounded-xl p-5 rv delay-100 active">
+<div class="flex justify-between items-start mb-3">
+<span class="bg-clay text-cream font-label-sm text-label-sm px-3 py-1 rounded-full border border-ink-band uppercase">Life</span>
+<span class="material-symbols-outlined text-clay">local_fire_department</span>
+</div>
+<h4 class="font-note text-note text-ink-band text-lg mb-2">The Underground Food Scene at Hall 3</h4>
+<p class="font-body-md text-body-md text-body-ink text-sm">Where to find the best midnight snacks when the official cafeterias close.</p>
+</article>
+<article class="bg-ink-band border-2 border-ink-band shadow-ink-sm rounded-xl p-5 rv delay-200 text-cream relative overflow-hidden active">
+<div class="absolute top-0 right-0 w-32 h-32 bg-plum rounded-full blur-3xl opacity-50 mix-blend-screen"></div>
+<div class="flex justify-between items-start mb-3 relative z-10">
+<span class="bg-sand text-ink-band font-label-sm text-label-sm px-3 py-1 rounded-full border border-ink-band uppercase">Tech</span>
+</div>
+<h4 class="font-note text-note text-cream text-lg mb-2 relative z-10">New Wi-Fi Nodes Installed in North Campus</h4>
+<p class="font-body-md text-body-md text-sand-deep text-sm relative z-10">Speeds reportedly up by 40% according to early student speed tests.</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- Confirmed Facts Section -->
+<section class="bg-sand py-section-v-mobile md:py-section-v px-gutter relative overflow-hidden">
+<!-- SVG Swoosh Background -->
+<svg class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg">
+<path class="text-clay" d="M0,400 C320,200 420,600 720,400 C1020,200 1120,600 1440,400 L1440,800 L0,800 Z" fill="currentColor"></path>
+</svg>
+<div class="max-w-max-width mx-auto relative z-10">
+<!-- Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 rv active">
+<div>
+<span class="font-eyebrow text-eyebrow text-moss uppercase tracking-widest mb-4 inline-block bg-cream border-2 border-ink-band px-3 py-1 rounded-full shadow-ink-sm">Verified</span>
+<h2 class="font-headline-h2-mobile text-headline-h2-mobile md:font-headline-h2 md:text-headline-h2 text-ink-band leading-none uppercase">Confirmed<br>Facts</h2>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-3 font-label-sm text-label-sm uppercase tracking-widest">
+<button class="bg-ink-band text-cream px-4 py-2 rounded-full border-2 border-ink-band shadow-ink-sm">All</button>
+<button class="bg-cream text-ink-band px-4 py-2 rounded-full border-2 border-ink-band hover:bg-sand transition-colors">Admin</button>
+<button class="bg-cream text-ink-band px-4 py-2 rounded-full border-2 border-ink-band hover:bg-sand transition-colors">Fees</button>
+<button class="bg-cream text-ink-band px-4 py-2 rounded-full border-2 border-ink-band hover:bg-sand transition-colors">Facilities</button>
+<button class="bg-cream text-ink-band px-4 py-2 rounded-full border-2 border-ink-band hover:bg-sand transition-colors">Academics</button>
+</div>
+</div>
+<!-- Facts Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-grid">
+<!-- Fact Card 1 -->
+<article class="fact-card bg-cream border-2 border-ink-band rounded-[16px] shadow-ink-md overflow-hidden rv active">
+<div class="p-4 border-b-2 border-ink-band bg-sand flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-moss text-[20px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-ink-band uppercase tracking-widest">Verified True</span>
+</div>
+<span class="font-label-sm text-label-sm text-ink-band opacity-60">ID: #4092</span>
+</div>
+<div class="p-6">
+<span class="inline-block bg-clay text-cream font-label-sm text-label-sm px-2 py-1 rounded border border-ink-band mb-4 uppercase">Admin</span>
+<h3 class="font-note text-note text-ink-band mb-3">Hostel D Renovation Funds Approved</h3>
+<p class="font-body-md text-body-md text-body-ink mb-6">Contrary to rumors of budget cuts, the VC's office has officially signed off on the 50M Naira allocation for Hostel D plumbing and electrical overhauls starting next semester.</p>
+<div class="flex items-center justify-between border-t border-ink-band/20 pt-4">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-sand border-2 border-ink-band flex items-center justify-center font-label-sm text-[10px]">SRC</div>
+<div class="w-8 h-8 rounded-full bg-sand-deep border-2 border-ink-band flex items-center justify-center font-label-sm text-[10px]">DOC</div>
+</div>
+<a class="font-label-sm text-label-sm text-clay uppercase tracking-widest hover:underline decoration-2 underline-offset-4" href="#">View Evidence</a>
+</div>
+</div>
+</article>
+<!-- Fact Card 2 -->
+<article class="fact-card bg-cream border-2 border-ink-band rounded-[16px] shadow-ink-md overflow-hidden rv delay-100 active">
+<div class="p-4 border-b-2 border-ink-band bg-sand flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-moss text-[20px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-ink-band uppercase tracking-widest">Verified True</span>
+</div>
+<span class="font-label-sm text-label-sm text-ink-band opacity-60">ID: #4088</span>
+</div>
+<div class="p-6">
+<span class="inline-block bg-plum text-cream font-label-sm text-label-sm px-2 py-1 rounded border border-ink-band mb-4 uppercase">Academics</span>
+<h3 class="font-note text-note text-ink-band mb-3">Library Extension Hours Permanent</h3>
+<p class="font-body-md text-body-md text-body-ink mb-6">The 24/7 library access trialed during the last exam period has been made permanent for all registered undergraduates, effective immediately.</p>
+<div class="flex items-center justify-between border-t border-ink-band/20 pt-4">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-sand border-2 border-ink-band flex items-center justify-center font-label-sm text-[10px]">LIB</div>
+</div>
+<a class="font-label-sm text-label-sm text-clay uppercase tracking-widest hover:underline decoration-2 underline-offset-4" href="#">View Evidence</a>
+</div>
+</div>
+</article>
+<!-- Fact Card 3 (Debunked) -->
+<article class="fact-card bg-surface-container-highest border-2 border-ink-band rounded-[16px] shadow-ink-md overflow-hidden rv delay-200 active">
+<div class="p-4 border-b-2 border-ink-band bg-error-container flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[20px]">cancel</span>
+<span class="font-label-sm text-label-sm text-on-error-container uppercase tracking-widest">Debunked</span>
+</div>
+<span class="font-label-sm text-label-sm text-ink-band opacity-60">ID: #4081</span>
+</div>
+<div class="p-6">
+<span class="inline-block bg-teal text-cream font-label-sm text-label-sm px-2 py-1 rounded border border-ink-band mb-4 uppercase">Fees</span>
+<h3 class="font-note text-note text-ink-band mb-3">Tech Fee Hike for Freshmen</h3>
+<p class="font-body-md text-body-md text-body-ink mb-6">Rumors circulating on WhatsApp about a 20k mandatory "tech integration fee" for incoming students are entirely false. No such fee exists in the current approved senate budget.</p>
+<div class="flex items-center justify-between border-t border-ink-band/20 pt-4">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-sand border-2 border-ink-band flex items-center justify-center font-label-sm text-[10px]">BUR</div>
+<div class="w-8 h-8 rounded-full bg-sand-deep border-2 border-ink-band flex items-center justify-center font-label-sm text-[10px]">SEN</div>
+</div>
+<a class="font-label-sm text-label-sm text-clay uppercase tracking-widest hover:underline decoration-2 underline-offset-4" href="#">View Evidence</a>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-12 text-center rv active">
+<button class="bg-cream border-2 border-ink-band font-eyebrow text-eyebrow uppercase tracking-widest px-8 py-4 rounded-full text-ink-band shadow-ink-sm hover:translate-y-[-2px] transition-transform">
+                Load More Facts
+            </button>
+</div>
+</div>
+</section>
+<!-- Process Timeline Section -->
+<section class="bg-cream py-section-v-mobile md:py-section-v px-gutter relative">
+<div class="max-w-max-width mx-auto">
+<!-- Header -->
+<div class="text-center mb-16 rv active">
+<span class="font-eyebrow text-eyebrow text-clay uppercase tracking-widest mb-4 inline-block border-b-2 border-clay pb-1">Our Methodology</span>
+<h2 class="font-headline-h2-mobile text-headline-h2-mobile md:font-headline-h2 md:text-headline-h2 text-ink-band uppercase">The Blueprint of<br>Truth-Finding</h2>
+<p class="font-body-lg text-body-lg text-body-ink max-w-2xl mx-auto mt-6">
+                We don't just repeat what we hear. Every tip goes through a rigorous, transparent process before it hits the broadcast.
+            </p>
+</div>
+<!-- Timeline -->
+<div class="relative timeline-line pt-8 pb-8">
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center mb-16 md:mb-24 rv active">
+<div class="md:w-1/2 flex justify-start md:justify-end md:pr-12 w-full pl-16 md:pl-0 mb-4 md:mb-0">
+<div class="bg-sand border-2 border-ink-band p-6 rounded-xl shadow-ink-md max-w-md w-full relative">
+<div class="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-cream border-2 border-ink-band rounded-full hidden md:block"></div>
+<span class="font-shout-lg-mobile text-[40px] text-clay/20 absolute -top-6 -left-4">01</span>
+<h3 class="font-note text-note text-ink-band mb-2 relative z-10">The Drop</h3>
+<p class="font-body-md text-body-md text-body-ink">A student, staff member, or anonymous source submits a tip, rumor, or document through our secure channel.</p>
+</div>
+</div>
+<div class="absolute left-0 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-12 h-12 bg-amber border-4 border-ink-band rounded-full flex items-center justify-center ml-[6px] md:ml-0">
+<span class="material-symbols-outlined text-ink-band">inbox</span>
+</div>
+<div class="md:w-1/2 w-full hidden md:block"></div>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center mb-16 md:mb-24 rv delay-100 active">
+<div class="md:w-1/2 w-full hidden md:block"></div>
+<div class="absolute left-0 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-12 h-12 bg-teal border-4 border-ink-band rounded-full flex items-center justify-center ml-[6px] md:ml-0">
+<span class="material-symbols-outlined text-cream">search</span>
+</div>
+<div class="md:w-1/2 flex justify-start md:justify-start md:pl-12 w-full pl-16 md:pl-0 mt-4 md:mt-0">
+<div class="bg-surface-container-high border-2 border-ink-band p-6 rounded-xl shadow-ink-md max-w-md w-full relative">
+<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-cream border-2 border-ink-band rounded-full hidden md:block"></div>
+<span class="font-shout-lg-mobile text-[40px] text-teal/20 absolute -top-6 -right-4">02</span>
+<h3 class="font-note text-note text-ink-band mb-2 relative z-10">The Chase</h3>
+<p class="font-body-md text-body-md text-body-ink">Our reporters investigate. We cross-reference claims with official documents, interview primary sources, and verify digital footprints.</p>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center mb-16 md:mb-24 rv delay-200 active">
+<div class="md:w-1/2 flex justify-start md:justify-end md:pr-12 w-full pl-16 md:pl-0 mb-4 md:mb-0">
+<div class="bg-error-container border-2 border-ink-band p-6 rounded-xl shadow-ink-md max-w-md w-full relative">
+<div class="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-cream border-2 border-ink-band rounded-full hidden md:block"></div>
+<span class="font-shout-lg-mobile text-[40px] text-error/20 absolute -top-6 -left-4">03</span>
+<h3 class="font-note text-note text-ink-band mb-2 relative z-10">The Sieve</h3>
+<p class="font-body-md text-body-md text-body-ink">Editorial review. If a claim cannot be substantiated with hard evidence or named sources, it is marked as unverified or debunked.</p>
+</div>
+</div>
+<div class="absolute left-0 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-12 h-12 bg-pink border-4 border-ink-band rounded-full flex items-center justify-center ml-[6px] md:ml-0">
+<span class="material-symbols-outlined text-cream">filter_alt</span>
+</div>
+<div class="md:w-1/2 w-full hidden md:block"></div>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center rv delay-300 active">
+<div class="md:w-1/2 w-full hidden md:block"></div>
+<div class="absolute left-0 md:left-1/2 transform -translate-x-0 md:-translate-x-1/2 w-12 h-12 bg-moss border-4 border-ink-band rounded-full flex items-center justify-center ml-[6px] md:ml-0">
+<span class="material-symbols-outlined text-cream">campaign</span>
+</div>
+<div class="md:w-1/2 flex justify-start md:justify-start md:pl-12 w-full pl-16 md:pl-0 mt-4 md:mt-0">
+<div class="bg-sand-deep border-2 border-ink-band p-6 rounded-xl shadow-ink-md max-w-md w-full relative">
+<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-cream border-2 border-ink-band rounded-full hidden md:block"></div>
+<span class="font-shout-lg-mobile text-[40px] text-moss/20 absolute -top-6 -right-4">04</span>
+<h3 class="font-note text-note text-ink-band mb-2 relative z-10">The Broadcast</h3>
+<p class="font-body-md text-body-md text-body-ink">The truth goes live. Clear, cited, and accessible to the entire campus community without paywalls or censorship.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Drop a Tip Section -->
+<section class="bg-ink-band py-section-v-mobile md:py-section-v px-gutter relative overflow-hidden">
+<!-- Abstract Shapes Background -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<circle cx="90%" cy="10%" fill="theme('colors.plum')" filter="blur(80px)" r="300"></circle>
+<circle cx="10%" cy="90%" fill="theme('colors.teal')" filter="blur(60px)" r="200"></circle>
+</svg>
+</div>
+<div class="max-w-[800px] mx-auto relative z-10 bg-cream border-[3px] border-ink-band rounded-2xl shadow-ink-lg p-8 md:p-12 rv active">
+<div class="text-center mb-10">
+<span class="font-eyebrow text-eyebrow text-clay uppercase tracking-widest mb-4 inline-block bg-sand border-2 border-ink-band px-3 py-1 rounded-full shadow-ink-sm">Anonymous &amp; Secure</span>
+<h2 class="font-headline-h2-mobile text-headline-h2-mobile md:font-headline-h2 md:text-headline-h2 text-ink-band uppercase leading-none mb-4">Drop a Tip</h2>
+<p class="font-body-lg text-body-lg text-body-ink">Heard something? Got receipts? Send it our way. We protect our sources.</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-eyebrow text-eyebrow text-ink-band uppercase mb-2" for="tip-type">What is this regarding?</label>
+<select class="w-full bg-sand border-2 border-ink-band rounded-lg p-3 font-body-md focus:outline-none focus:ring-2 focus:ring-amber shadow-sm" id="tip-type">
+<option>General News</option>
+<option>Administration</option>
+<option>Student Life</option>
+<option>Academics</option>
+<option>Other</option>
+</select>
+</div>
+<div>
+<label class="block font-eyebrow text-eyebrow text-ink-band uppercase mb-2" for="urgency">Urgency Level</label>
+<select class="w-full bg-sand border-2 border-ink-band rounded-lg p-3 font-body-md focus:outline-none focus:ring-2 focus:ring-amber shadow-sm" id="urgency">
+<option>Standard</option>
+<option>High (Time Sensitive)</option>
+<option>Critical</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-eyebrow text-eyebrow text-ink-band uppercase mb-2" for="message">The Details</label>
+<textarea class="w-full bg-sand border-2 border-ink-band rounded-lg p-4 font-body-md focus:outline-none focus:ring-2 focus:ring-amber shadow-sm placeholder:text-ink-band/50" id="message" placeholder="Tell us what you know. Be as specific as possible..." rows="5"></textarea>
+</div>
+<div class="border-2 border-dashed border-ink-band/40 rounded-lg p-6 bg-surface text-center hover:bg-sand transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[32px] text-ink-band mb-2">upload_file</span>
+<p class="font-eyebrow text-eyebrow text-ink-band uppercase">Attach Evidence (Optional)</p>
+<p class="font-label-sm text-label-sm text-body-ink mt-1">Images, PDFs, or Audio files. Max 10MB.</p>
+</div>
+<div class="flex items-start gap-3 bg-error-container/50 p-4 border border-ink-band rounded-lg">
+<input class="mt-1 w-4 h-4 text-ink-band border-ink-band rounded focus:ring-amber focus:ring-offset-0 bg-cream" id="anon" type="checkbox">
+<label class="font-label-sm text-label-sm text-ink-band" for="anon">I understand that submitting this tip does not guarantee publication. Spread UI reserves the right to investigate and verify all claims before broadcasting.</label>
+</div>
+<button class="w-full btn-primary font-eyebrow text-eyebrow uppercase tracking-widest px-8 py-5 rounded-xl text-ink-band text-lg" type="button">
+                Submit Securely
+            </button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full relative overflow-hidden bg-ink-band before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-8">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1180px] mx-auto px-gutter py-section-v-mobile md:py-section-v rv active">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<span class="font-headline-h2-mobile text-headline-h2-mobile text-clay block mb-2">Spread</span>
+<span class="font-label-sm text-label-sm text-sand dark:text-sand-deep">© 2024 SPREAD UI - UNIVERSITY OF IBADAN BROADCAST</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm text-sand opacity-60">
+<a class="hover:text-primary-fixed transition-colors" href="#">Archives</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">Submit Fact</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">Contact Us</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">Privacy</a>
+</nav>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.rv');
+            
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+                
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger on load
+        });
+    </script>
+
+
+</body></html>
+
+
+
+
+
+
+THE UI FOR INDIVIDUAL ARTICLES
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SPREAD - Union Leaders Demand Transparency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "sand": "#E4E0D4",
+                        "primary": "#835500",
+                        "error-container": "#ffdad6",
+                        "body-ink": "#23302F",
+                        "inverse-primary": "#ffb954",
+                        "on-primary-fixed-variant": "#633f00",
+                        "clay": "#C0522E",
+                        "on-tertiary-container": "#004545",
+                        "cream": "#F4F1E7",
+                        "surface-dim": "#c2dfea",
+                        "primary-fixed": "#ffddb4",
+                        "surface-container-high": "#d0edf9",
+                        "plum": "#7C3055",
+                        "on-surface": "#011f27",
+                        "primary-container": "#e39a20",
+                        "surface-tint": "#835500",
+                        "on-tertiary-fixed": "#002020",
+                        "tertiary": "#106969",
+                        "on-primary-fixed": "#291800",
+                        "on-tertiary-fixed-variant": "#004f50",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#18343d",
+                        "inverse-on-surface": "#dcf5ff",
+                        "primary-fixed-dim": "#ffb954",
+                        "surface-container-low": "#e4f7ff",
+                        "on-background": "#011f27",
+                        "surface-bright": "#f2fbff",
+                        "ink-band": "#10262D",
+                        "surface-container": "#d5f3fe",
+                        "tertiary-fixed": "#a4f0ef",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#b6005b",
+                        "on-secondary-fixed-variant": "#8e0046",
+                        "tertiary-container": "#6ab5b5",
+                        "moss": "#5E7A3A",
+                        "outline-variant": "#d6c3ae",
+                        "on-surface-variant": "#524535",
+                        "secondary-fixed-dim": "#ffb1c6",
+                        "surface-variant": "#cae7f3",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "secondary-fixed": "#ffd9e1",
+                        "on-error-container": "#93000a",
+                        "background": "#f2fbff",
+                        "error": "#ba1a1a",
+                        "outline": "#847562",
+                        "on-primary-container": "#573700",
+                        "sand-deep": "#D5D0BE",
+                        "tertiary-fixed-dim": "#88d3d3",
+                        "surface": "#f2fbff",
+                        "on-secondary-fixed": "#3f001b",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#cae7f3",
+                        "secondary-container": "#d92974",
+                        "indigo": "#2A3D8F"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gap-list": "24px",
+                        "section-v": "94px",
+                        "gutter": "26px",
+                        "max-width": "1180px",
+                        "unit": "4px",
+                        "section-v-mobile": "66px",
+                        "gap-grid": "40px"
+                    },
+                    "fontFamily": {
+                        "shout-lg": ["Bricolage Grotesque", "sans-serif"],
+                        "note": ["Bricolage Grotesque", "sans-serif"],
+                        "body-lg": ["Fira Sans", "sans-serif"],
+                        "headline-h2-mobile": ["Bricolage Grotesque", "sans-serif"],
+                        "shout-lg-mobile": ["Bricolage Grotesque", "sans-serif"],
+                        "eyebrow": ["Space Mono", "monospace"],
+                        "label-sm": ["Space Mono", "monospace"],
+                        "headline-h2": ["Bricolage Grotesque", "sans-serif"],
+                        "body-md": ["Fira Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "shout-lg": ["142px", { "lineHeight": "0.94", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "note": ["23px", { "lineHeight": "1.25", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-h2-mobile": ["40px", { "lineHeight": "1.0", "fontWeight": "700" }],
+                        "shout-lg-mobile": ["64px", { "lineHeight": "0.94", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "eyebrow": ["13px", { "lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "700" }],
+                        "label-sm": ["11px", { "lineHeight": "1.0", "fontWeight": "700" }],
+                        "headline-h2": ["70px", { "lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #E4E0D4; } /* bg-sand */
+        .rv { opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+        .rv.visible { opacity: 1; transform: translateY(0); }
+        .brutal-shadow-sm { box-shadow: 3px 3px 0px 0px #10262D; border: 2px solid #10262D; }
+        .brutal-shadow-md { box-shadow: 7px 7px 0px 0px #10262D; border: 2px solid #10262D; }
+        .brutal-shadow-lg { box-shadow: 12px 12px 0px 0px #10262D; border: 2px solid #10262D; }
+        .scanlines {
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+            background-size: 100% 4px;
+        }
+        .parallax-bg {
+            background-image: radial-gradient(#10262D 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="text-body-ink font-body-lg overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-cream dark:bg-ink-band docked full-width top-0 sticky border-b-4 border-ink-band dark:border-sand-deep shadow-[7px_7px_0px_0px_rgba(16,38,45,1)] z-50">
+<div class="flex justify-between items-center w-full px-gutter h-[80px] max-w-max-width mx-auto">
+<div class="flex items-center gap-6">
+<a class="text-headline-h2 font-shout-lg italic text-ink-band dark:text-cream hidden md:block" href="#">SPREAD</a>
+<a class="text-headline-h2-mobile font-headline-h2-mobile italic text-ink-band dark:text-cream md:hidden" href="#">SPREAD</a>
+<nav class="hidden md:flex items-center gap-6 ml-8">
+<a class="text-clay font-bold border-b-2 border-clay pb-1 text-label-sm font-label-sm uppercase hover:bg-sand dark:hover:bg-primary-container transition-all" href="#">News</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm uppercase hover:bg-sand dark:hover:bg-primary-container transition-all" href="#">Campus</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm uppercase hover:bg-sand dark:hover:bg-primary-container transition-all" href="#">Facts</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm uppercase hover:bg-sand dark:hover:bg-primary-container transition-all" href="#">Life</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-sand border-2 border-ink-band rounded-full px-4 py-1 brutal-shadow-sm focus-within:border-plum focus-within:shadow-[3px_3px_0px_0px_#7C3055]">
+<span class="material-symbols-outlined text-ink-band mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-sm font-label-sm w-32 placeholder-on-surface-variant" placeholder="Search..." type="text"/>
+</div>
+<button class="bg-primary-container text-ink-band border-2 border-ink-band rounded-full px-6 py-2 brutal-shadow-sm text-label-sm font-label-sm uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[5px_5px_0px_0px_#10262D] transition-all">Join Broadcast</button>
+</div>
+</div>
+</header>
+<main class="w-full relative pb-section-v">
+<!-- Hero Image Band -->
+<section class="w-full relative bg-ink-band pt-8 pb-16">
+<div class="max-w-max-width mx-auto px-gutter relative z-10 rv">
+<div class="rounded-[22px] brutal-shadow-lg overflow-hidden bg-sand relative h-[60vh] md:h-[70vh]">
+<img class="w-full h-full object-cover" data-alt="A massive crowd of students protesting on a university campus at sunset, holding handmade cardboard signs demanding transparency and climate justice. The scene is shot with a wide-angle lens, capturing the brutalist brick architecture of the university buildings in the background. The lighting is golden hour, casting long dramatic shadows and highlighting the urgent, kinetic energy of the youth protest. The overall aesthetic feels like a gritty, high-contrast documentary photograph, resonating with a lo-fi brutalist design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjXIQjLqGfO4Nh-Ru21gxIbAwI16huwhkKAQWA5y6PnuIC3Miolo3bHPw251DFy51vNS4SextGMDyFX5bjOHCeXw2tHAwFroeNQug_RQjeXqGTYlyieJ5FKFfqsy4hLk8fjSy3JBhEQ2W8ltHqAUymbCwA7_zDOknejWV9o4dK6H3QB_cyEAStRya96s-cS31eqbIMwZTK0TtO8DfVO5ISipFjH_3eGAiZFaMpMuka5ElnPWhe_H0"/>
+<div class="absolute inset-0 scanlines pointer-events-none"></div>
+<!-- Studio Frame Antenna Motif -->
+<svg class="absolute top-4 right-4 w-12 h-12 text-cream" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 8l8-4 8 4M12 4v16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</section>
+<!-- Headline & Article Content -->
+<section class="max-w-max-width mx-auto px-gutter -mt-24 relative z-20">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gap-grid">
+<!-- Main Article Column -->
+<div class="md:col-span-8 bg-cream p-8 md:p-12 brutal-shadow-md rounded-xl rv">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-clay text-cream px-3 py-1 rounded-full text-eyebrow font-eyebrow uppercase brutal-shadow-sm">Campus Politics</span>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm uppercase">Human Verified</span>
+</div>
+</div>
+<h1 class="text-shout-lg-mobile md:text-shout-lg font-shout-lg-mobile md:font-shout-lg text-ink-band mb-8 leading-none uppercase">Union Leaders Demand Transparency in Fee Allocation</h1>
+<div class="flex items-center justify-between border-b-2 border-dashed border-ink-band pb-6 mb-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-sand brutal-shadow-sm border-2 border-ink-band overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A gritty, high-contrast portrait of a young student journalist in their early 20s. They are looking directly at the camera with an intense, determined expression. The lighting is harsh, reminiscent of flash photography against a concrete wall. They are wearing a casual graphic tee. The image style is authentic, unfiltered, and raw, fitting a lo-fi brutalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzmAz77kxRht8bTxxgu70Wi5sgCi8teW3X0gmk4DA136H-2pk6rV4qkeqkU5mEJq8R2gWybgSZxPyOUoy0JaH6z78S-gFFeUhoXLd37VYBM2ZxqFCQMmYq5CcwPq5g8tPWEbOXqQ7Iv-0NvrAYJjBaEJz-d9y9UWuT8V70Mb9pc8HpU0jL1Uygv5zu_13tZlpNMxK4BiGk1BH8SoSIhPZcz7BEBpsaK5bIl9LLNNGPXyUXDde2UW4"/>
+</div>
+<div>
+<p class="text-note font-note text-ink-band">By Adebayo T.</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase">Published Oct 24, 2024</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-sand flex items-center justify-center brutal-shadow-sm border-2 border-ink-band hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-sand flex items-center justify-center brutal-shadow-sm border-2 border-ink-band hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+<div class="prose max-w-none text-body-lg font-body-lg text-body-ink space-y-6">
+<p class="text-note font-note leading-relaxed">The student union has issued an ultimatum to the university administration, demanding a full public audit of the recently introduced "Campus Development Fee" within the next 48 hours.</p>
+<p>Tensions reached a boiling point on Tuesday afternoon when over 500 students gathered outside the administrative block. The demonstration, organized by the Student Representative Council (SRC), was sparked by leaked documents suggesting that a significant portion of the new fees was being diverted from the promised library renovations to executive travel expenses.</p>
+<h2 class="text-headline-h2-mobile font-headline-h2-mobile text-ink-band mt-12 mb-4">"We are not ATMs"</h2>
+<p>"We were told this fee was essential for upgrading our failing IT infrastructure and expanding study spaces," said SRC President, Amara Nwosu, speaking to the crowd through a megaphone. "Instead, we are seeing zero improvements while management authorizes luxury retreats. We are students, not ATMs."</p>
+<div class="my-8 p-6 bg-sand border-l-8 border-clay brutal-shadow-sm">
+<p class="text-note font-note italic text-ink-band m-0">"The lack of transparency is no longer an oversight; it's a deliberate strategy to avoid accountability." - Amara Nwosu</p>
+</div>
+<p>University spokesperson, Dr. Elias Mensah, released a brief statement late Tuesday denying the allegations of misappropriation. He stated that the leaked documents were "preliminary drafts" and did not reflect the final budget allocations. He assured students that a detailed breakdown would be provided at the end of the fiscal quarter.</p>
+<p>However, the union leadership remains unconvinced, pointing out that previous promises of financial transparency have repeatedly fallen through.</p>
+</div>
+</div>
+<!-- Sidebar / Sticky Context -->
+<div class="md:col-span-4 space-y-8 rv" style="transition-delay: 0.2s;">
+<!-- Context Card -->
+<div class="bg-primary-fixed p-6 rounded-xl brutal-shadow-md sticky top-[100px]">
+<h3 class="text-note font-note text-on-primary-fixed mb-4 border-b-2 border-ink-band pb-2">The Breakdown</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full border-2 border-ink-band bg-cream flex items-center justify-center flex-shrink-0 mt-1">
+<span class="text-label-sm font-label-sm">1</span>
+</div>
+<p class="text-body-md font-body-md text-on-primary-fixed-variant">Fee introduced: Sep 2024 (₦25,000/student)</p>
+</li>
+<li class="flex items-start gap-3 border-t-2 border-dashed border-outline-variant pt-4">
+<div class="w-6 h-6 rounded-full border-2 border-ink-band bg-cream flex items-center justify-center flex-shrink-0 mt-1">
+<span class="text-label-sm font-label-sm">2</span>
+</div>
+<p class="text-body-md font-body-md text-on-primary-fixed-variant">Promised allocation: 70% Facilities, 30% IT</p>
+</li>
+<li class="flex items-start gap-3 border-t-2 border-dashed border-outline-variant pt-4">
+<div class="w-6 h-6 rounded-full border-2 border-ink-band bg-cream flex items-center justify-center flex-shrink-0 mt-1">
+<span class="text-label-sm font-label-sm">3</span>
+</div>
+<p class="text-body-md font-body-md text-on-primary-fixed-variant">Leaked docs claim: 40% diverted to "Admin Overhead"</p>
+</li>
+</ul>
+</div>
+<!-- Related Broadcasts -->
+<div class="bg-sand p-6 rounded-xl brutal-shadow-md">
+<h3 class="text-note font-note text-ink-band mb-4">Related Broadcasts</h3>
+<div class="space-y-4">
+<a class="block group" href="#">
+<div class="h-24 bg-cream rounded border-2 border-ink-band overflow-hidden mb-2 relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A wide shot of a severely dilapidated university library interior. Bookshelves are half-empty, the ceiling shows signs of water damage, and students are huddled over old desks studying under poor fluorescent lighting. The color palette is muted and stark, emphasizing the neglect. The style is gritty documentary photography, fitting a raw, lo-fi brutalist editorial context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6b9hlNwR9XOnDk8H2qky1UT2VtbY5tng2F0BrMcdyvsHe1yiHLFMz3IyDQSUlpc4RCXLWnwAqEziGP173pMtc9yWRLo1VwMcvDGluruGBAYAVPIHXI_rlpu1T5YF4qN5CV0hWsMn7tXnphKnkIWr4vQIU_tpd5H7jDcWswOC2t8WgkV6pB-BiLquD_3vquvV6V_BwzkicD_sZrRhBDl6p3znmd37lY-ZJBNn5cZcuNqS2ZCG6fWw"/>
+</div>
+<h4 class="text-body-md font-body-md font-bold text-ink-band group-hover:text-clay transition-colors">Library Ceiling Collapse Halts Midterms</h4>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-ink-band dark:bg-ink-band full-width py-section-v border-t-8 border-primary flat no shadows">
+<div class="w-full px-gutter flex flex-col md:flex-row justify-between items-center max-w-max-width mx-auto">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<h2 class="text-headline-h2 font-shout-lg text-primary mb-2">SPREAD</h2>
+<p class="text-label-sm font-label-sm text-cream dark:text-cream">© 2024 SPREAD NEWS BROADCAST • LAGOS LO-FI ARCHIVE</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-sand-deep text-label-sm font-label-sm uppercase hover:text-inverse-primary underline transition-colors" href="#">University Web</a>
+<a class="text-sand-deep text-label-sm font-label-sm uppercase hover:text-inverse-primary underline transition-colors" href="#">Broadcasting Standards</a>
+<a class="text-sand-deep text-label-sm font-label-sm uppercase hover:text-inverse-primary underline transition-colors" href="#">Archive</a>
+<a class="text-sand-deep text-label-sm font-label-sm uppercase hover:text-inverse-primary underline transition-colors" href="#">Contact</a>
+</nav>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden bg-ink-band dark:bg-ink-band docked full-width rounded-t-xl border-t-2 border-clay shadow-[0px_-4px_10px_rgba(0,0,0,0.3)]">
+<a class="flex flex-col items-center justify-center bg-clay text-cream rounded-xl p-2 scale-95 transition-transform w-16" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">live_tv</span>
+<span class="text-label-sm font-label-sm">Live</span>
+</a>
+<a class="flex flex-col items-center justify-center text-sand-deep p-2 hover:text-primary-fixed-dim w-16" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">notifications_active</span>
+<span class="text-label-sm font-label-sm">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-sand-deep p-2 hover:text-primary-fixed-dim w-16" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">settings_input_antenna</span>
+<span class="text-label-sm font-label-sm">Radio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-sand-deep p-2 hover:text-primary-fixed-dim w-16" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">account_circle</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.rv').forEach((el) => observer.observe(el));
+        });
+    </script>
+</body></html>
+
+
