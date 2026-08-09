@@ -4,6 +4,7 @@ import path from "node:path";
 import { NextResponse } from "next/server";
 import { addTip } from "@/lib/tips";
 import { sendTipAlertEmail } from "@/lib/resend";
+import { getCurrentUser } from "@/lib/session";
 
 const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads", "tips");
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
@@ -52,6 +53,8 @@ export async function POST(request: Request) {
     evidenceUrl = `/uploads/tips/${filename}`;
   }
 
+  const user = await getCurrentUser();
+
   const tip = {
     id: Date.now().toString(36),
     category,
@@ -59,8 +62,9 @@ export async function POST(request: Request) {
     message,
     evidenceUrl,
     receivedAt: new Date().toISOString(),
+    userId: user?.id,
   };
-  addTip(tip);
+  await addTip(tip);
 
   // Best-effort: the tip is already saved above regardless of whether the
   // alert email succeeds, so a Resend hiccup should never fail the submission.

@@ -12,8 +12,11 @@ export function SiteFooter() {
           <span className="font-headline-h2-mobile text-headline-h2-mobile text-clay block mb-2">
             Spread
           </span>
-          <span className="font-label-sm text-label-sm text-sand">
-            &copy; {year} SPREAD — UNIVERSITY OF IBADAN BROADCAST · LAGOS LO-FI ARCHIVE
+          <span className="font-label-sm text-label-sm text-sand block">
+            &copy; {year} SPREAD — UNIVERSITY OF IBADAN CAMPUS NEWS · LAGOS LO-FI ARCHIVE
+          </span>
+          <span className="font-label-sm text-label-sm text-sand opacity-60 block mt-1">
+            BUILT BY STREAK · NOT AFFILIATED WITH THE UNIVERSITY
           </span>
         </div>
         <nav className="flex flex-wrap justify-center gap-6 font-label-sm text-label-sm text-sand opacity-60">

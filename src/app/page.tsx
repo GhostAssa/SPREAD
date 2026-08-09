@@ -12,11 +12,11 @@ import { getHomepageFeature, getHomepageCompacts } from "@/lib/articles";
 import { getFacts } from "@/lib/facts";
 import { getSiteSettings } from "@/lib/site-settings";
 
-export default function HomePage() {
-  const feature = getHomepageFeature();
-  const compacts = getHomepageCompacts();
-  const facts = getFacts();
-  const settings = getSiteSettings();
+export default async function HomePage() {
+  const feature = await getHomepageFeature();
+  const compacts = await getHomepageCompacts();
+  const facts = await getFacts();
+  const settings = await getSiteSettings();
 
   return (
     <>

@@ -1,32 +1,41 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Fira_Sans, Space_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+// Self-hosted (not next/font/google) — this dev environment's network is
+// unreliable enough that live Google Fonts fetches were silently failing,
+// falling back to a system font and adding ~30s to every page load.
+const bricolage = localFont({
+  src: "./fonts/bricolage-grotesque-variable.woff2",
+  weight: "200 800",
   variable: "--font-bricolage",
   display: "swap",
 });
 
-const firaSans = Fira_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const firaSans = localFont({
+  src: [
+    { path: "./fonts/fira-sans-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/fira-sans-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/fira-sans-600.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/fira-sans-700.woff2", weight: "700", style: "normal" },
+  ],
   variable: "--font-fira-sans",
   display: "swap",
 });
 
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
+const spaceMono = localFont({
+  src: [
+    { path: "./fonts/space-mono-400.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/space-mono-700.woff2", weight: "700", style: "normal" },
+  ],
   variable: "--font-space-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Spread — University of Ibadan News, Checked First",
+  title: "Spread — University of Ibadan Campus News, Checked First",
   description:
-    "Human-Verified news for the University of Ibadan. We separate the noise from the facts.",
+    "Human-Verified campus news covering the University of Ibadan. We separate the noise from the facts. Built by Streak — not affiliated with the university.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

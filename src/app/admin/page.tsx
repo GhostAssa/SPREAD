@@ -4,8 +4,8 @@ import { ArticleRowActions } from "@/components/admin/article-row-actions";
 import { LogoutButton } from "@/components/admin/logout-button";
 import { AdminNav } from "@/components/admin/admin-nav";
 
-export default function AdminDashboard() {
-  const articles = getArticles();
+export default async function AdminDashboard() {
+  const articles = await getArticles();
 
   return (
     <main className="min-h-screen bg-cream py-[66px] px-[26px]">

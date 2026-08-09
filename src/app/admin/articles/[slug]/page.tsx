@@ -8,10 +8,10 @@ type PageProps = {
 
 export default async function EditArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
   if (!article) notFound();
 
-  const otherArticles = getArticles()
+  const otherArticles = (await getArticles())
     .filter((a) => a.slug !== slug)
     .map((a) => ({ slug: a.slug, title: a.title }));
 

@@ -8,6 +8,7 @@ const ITEMS = [
   { label: "Home", href: "/", icon: "live_tv" },
   { label: "News", href: "/news", icon: "notifications_active" },
   { label: "Events", href: "/events", icon: "settings_input_antenna" },
+  { label: "Ask AI", href: "/fact-check", icon: "fact_check" },
   { label: "Tip", href: "/share-a-news", icon: "account_circle" },
 ] as const;
 

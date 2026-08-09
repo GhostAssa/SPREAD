@@ -11,6 +11,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
   }
 
-  const { added } = addSubscriber(email);
+  const { added } = await addSubscriber(email);
   return NextResponse.json({ ok: true, alreadySubscribed: !added });
 }

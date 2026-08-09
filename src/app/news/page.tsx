@@ -9,7 +9,7 @@ import { getArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "News — Spread",
-  description: "Every human-verified broadcast from the University of Ibadan, checked first.",
+  description: "Every human-verified broadcast from University of Ibadan campus, checked first.",
 };
 
 type PageProps = {
@@ -25,7 +25,7 @@ export default async function NewsPage({ searchParams }: PageProps) {
   const { q } = await searchParams;
   const query = normalize(q?.trim() ?? "");
 
-  const allArticles = getArticles();
+  const allArticles = await getArticles();
   const articles = query
     ? allArticles.filter(
         (a) =>

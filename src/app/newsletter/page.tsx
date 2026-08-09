@@ -7,7 +7,7 @@ import { NewsletterForm } from "@/components/newsletter-form";
 
 export const metadata: Metadata = {
   title: "Join Newsletter — Spread",
-  description: "Get breaking, human-verified University of Ibadan news the moment it's confirmed.",
+  description: "Get breaking, human-verified University of Ibadan campus news the moment it's confirmed.",
 };
 
 export default function NewsletterPage() {
@@ -36,8 +36,8 @@ export default function NewsletterPage() {
               Newsletter
             </h1>
             <p className="font-body-lg text-body-lg text-body-ink">
-              No spam, no noise — just human-verified University of Ibadan news the moment we
-              confirm it, and a roundup of everything Spread broadcasts.
+              No spam, no noise — just human-verified University of Ibadan campus news the
+              moment we confirm it, and a roundup of everything Spread broadcasts.
             </p>
           </div>
           <NewsletterForm />

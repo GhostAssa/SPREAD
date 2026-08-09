@@ -1,7 +1,4 @@
-import fs from "node:fs";
-import path from "node:path";
-
-const DATA_PATH = path.join(process.cwd(), "src", "data", "site-settings.json");
+import { prisma } from "@/lib/prisma";
 
 export type SiteSettings = {
   tickerItems: string[];
@@ -13,17 +10,23 @@ const DEFAULTS: SiteSettings = {
   breakingHeadlines: ["CHECK BACK FOR THE LATEST"],
 };
 
-export function getSiteSettings(): SiteSettings {
-  if (!fs.existsSync(DATA_PATH)) return DEFAULTS;
-  const parsed = JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
+const SINGLETON_ID = "singleton";
+
+export async function getSiteSettings(): Promise<SiteSettings> {
+  const row = await prisma.siteSettings.findUnique({ where: { id: SINGLETON_ID } });
+  if (!row) return DEFAULTS;
   return {
-    tickerItems: parsed.tickerItems?.length ? parsed.tickerItems : DEFAULTS.tickerItems,
-    breakingHeadlines: parsed.breakingHeadlines?.length
-      ? parsed.breakingHeadlines
+    tickerItems: row.tickerItems.length ? row.tickerItems : DEFAULTS.tickerItems,
+    breakingHeadlines: row.breakingHeadlines.length
+      ? row.breakingHeadlines
       : DEFAULTS.breakingHeadlines,
   };
 }
 
-export function saveSiteSettings(settings: SiteSettings): void {
-  fs.writeFileSync(DATA_PATH, JSON.stringify(settings, null, 2) + "\n", "utf-8");
+export async function saveSiteSettings(settings: SiteSettings): Promise<void> {
+  await prisma.siteSettings.upsert({
+    where: { id: SINGLETON_ID },
+    create: { id: SINGLETON_ID, ...settings },
+    update: settings,
+  });
 }

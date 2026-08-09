@@ -49,9 +49,17 @@ export function ArticleListCard({ article, delay }: ArticleListCardProps) {
         <div className="p-5">
           <h3 className="font-note text-note text-ink-band mb-2">{article.title}</h3>
           <p className="font-body-md text-body-md text-body-ink mb-4">{article.excerpt}</p>
-          <div className="flex items-center gap-2 font-label-sm text-label-sm text-ink-band uppercase">
-            <Icon name="schedule" className="text-[16px]" />
-            <span>{article.timeAgoLabel}</span>
+          <div className="flex items-center justify-between gap-2 flex-wrap">
+            <div className="flex items-center gap-2 font-label-sm text-label-sm text-ink-band uppercase">
+              <Icon name="schedule" className="text-[16px]" />
+              <span>{article.timeAgoLabel}</span>
+            </div>
+            {article.source === "community" && (
+              <div className="flex items-center gap-1 font-label-sm text-label-sm text-moss uppercase">
+                <Icon name="verified_user" className="text-[14px]" />
+                <span>AI-Screened</span>
+              </div>
+            )}
           </div>
         </div>
       </Link>

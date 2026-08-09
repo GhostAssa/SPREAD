@@ -1,8 +1,8 @@
 import { getArticles } from "@/lib/articles";
 import { ArticleForm } from "@/components/admin/article-form";
 
-export default function NewArticlePage() {
-  const otherArticles = getArticles().map((a) => ({ slug: a.slug, title: a.title }));
+export default async function NewArticlePage() {
+  const otherArticles = (await getArticles()).map((a) => ({ slug: a.slug, title: a.title }));
 
   return (
     <main className="min-h-screen bg-cream py-[66px] px-[26px]">

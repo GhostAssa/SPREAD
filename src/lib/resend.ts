@@ -1,4 +1,4 @@
-import { Resend } from "resend";
+import { Resend, type CreateEmailOptions } from "resend";
 import { getSubscribers, unsubscribeToken } from "@/lib/newsletter";
 import type { Article } from "@/lib/types";
 import type { Tip } from "@/lib/tips";
@@ -53,7 +53,7 @@ export async function sendBreakingNewsEmail(article: Article): Promise<NotifyRes
     return { skipped: true, reason: "RESEND_API_KEY is not set in .env.local" };
   }
 
-  const subscribers = getSubscribers();
+  const subscribers = await getSubscribers();
   if (subscribers.length === 0) {
     return { skipped: true, reason: "No newsletter subscribers yet" };
   }
@@ -61,7 +61,7 @@ export async function sendBreakingNewsEmail(article: Article): Promise<NotifyRes
   const resend = new Resend(apiKey);
   const subject = `BREAKING: ${article.title}`;
 
-  const emails = await Promise.all(
+  const emails: CreateEmailOptions[] = await Promise.all(
     subscribers.map(async (s) => ({
       from: fromAddress(),
       to: s.email,

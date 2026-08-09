@@ -4,8 +4,8 @@ import { AdminNav } from "@/components/admin/admin-nav";
 import { TipRowActions } from "@/components/admin/tip-row-actions";
 import { LogoutButton } from "@/components/admin/logout-button";
 
-export default function AdminTipsPage() {
-  const tips = getTips();
+export default async function AdminTipsPage() {
+  const tips = await getTips();
 
   return (
     <main className="min-h-screen bg-cream py-[66px] px-[26px]">

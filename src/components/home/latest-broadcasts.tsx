@@ -55,9 +55,17 @@ export function LatestBroadcasts({ feature, compacts }: LatestBroadcastsProps) {
               <div className="p-6 bg-sand">
                 <h3 className="font-note text-note text-ink-band mb-3">{feature.title}</h3>
                 <p className="font-body-md text-body-md text-body-ink mb-4">{feature.excerpt}</p>
-                <div className="flex items-center gap-2 font-label-sm text-label-sm text-ink-band uppercase">
-                  <Icon name="schedule" className="text-[16px]" />
-                  <span>{feature.timeAgoLabel}</span>
+                <div className="flex items-center justify-between gap-2 flex-wrap">
+                  <div className="flex items-center gap-2 font-label-sm text-label-sm text-ink-band uppercase">
+                    <Icon name="schedule" className="text-[16px]" />
+                    <span>{feature.timeAgoLabel}</span>
+                  </div>
+                  {feature.source === "community" && (
+                    <div className="flex items-center gap-1 font-label-sm text-label-sm text-moss uppercase">
+                      <Icon name="verified_user" className="text-[14px]" />
+                      <span>AI-Screened by {feature.authorName}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </Link>
@@ -113,6 +121,18 @@ export function LatestBroadcasts({ feature, compacts }: LatestBroadcastsProps) {
                     >
                       {article.excerpt}
                     </p>
+                    {article.source === "community" && (
+                      <div
+                        className={
+                          isDark
+                            ? "flex items-center gap-1 font-label-sm text-label-sm text-tertiary-fixed-dim uppercase mt-2 relative z-10"
+                            : "flex items-center gap-1 font-label-sm text-label-sm text-moss uppercase mt-2"
+                        }
+                      >
+                        <Icon name="verified_user" className="text-[14px]" />
+                        <span>AI-Screened</span>
+                      </div>
+                    )}
                   </Link>
                 </Reveal>
               );

@@ -3,8 +3,8 @@ import { LogoutButton } from "@/components/admin/logout-button";
 import { SettingsForm } from "@/components/admin/settings-form";
 import { getSiteSettings } from "@/lib/site-settings";
 
-export default function AdminSettingsPage() {
-  const settings = getSiteSettings();
+export default async function AdminSettingsPage() {
+  const settings = await getSiteSettings();
 
   return (
     <main className="min-h-screen bg-cream py-[66px] px-[26px]">

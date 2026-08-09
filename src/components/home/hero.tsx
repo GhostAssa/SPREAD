@@ -34,7 +34,7 @@ export function Hero() {
       <div className="max-w-[1180px] w-full mx-auto relative z-10 grid grid-cols-1 md:grid-cols-12 gap-[40px]">
         <Reveal as="div" className="md:col-span-7 flex flex-col justify-center">
           <span className="font-eyebrow text-eyebrow text-clay uppercase tracking-widest mb-4 inline-block bg-cream border-2 border-ink-band px-3 py-1 w-max rounded-full shadow-ink-sm">
-            University of Ibadan&apos;s Source of Truth
+            Covering University of Ibadan
           </span>
           <h1 className="font-shout-lg-mobile text-shout-lg-mobile md:font-shout-lg md:text-shout-lg text-ink-band leading-none mb-6">
             HUMAN
@@ -44,8 +44,8 @@ export function Hero() {
             BROADCAST.
           </h1>
           <p className="font-body-lg text-body-lg text-body-ink max-w-md mb-8 border-l-4 border-amber pl-4">
-            The unfiltered pulse of the University of Ibadan. We separate the noise from the
-            facts — starting right here, before it spreads everywhere else.
+            The unfiltered pulse of University of Ibadan campus life. We separate the noise
+            from the facts — starting right here, before it spreads everywhere else.
           </p>
           <div className="flex gap-4 flex-wrap">
             <Link

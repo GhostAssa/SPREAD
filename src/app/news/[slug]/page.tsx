@@ -6,19 +6,23 @@ import { MobileBottomNav } from "@/components/mobile-bottom-nav";
 import { ArticleHero } from "@/components/article/article-hero";
 import { ArticleBody } from "@/components/article/article-body";
 import { ArticleSidebar } from "@/components/article/article-sidebar";
+import { CommentSection } from "@/components/article/comment-section";
 import { getArticleBySlug, getArticles } from "@/lib/articles";
+import { getCommentsForArticle } from "@/lib/comments";
+import { isBookmarked } from "@/lib/bookmarks";
+import { getCurrentUser } from "@/lib/session";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export function generateStaticParams() {
-  return getArticles().map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  return (await getArticles()).map((a) => ({ slug: a.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
   if (!article) return {};
   return {
     title: `${article.title} — Spread`,
@@ -28,10 +32,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
   if (!article) notFound();
 
-  const related = article.relatedSlug ? getArticleBySlug(article.relatedSlug) : undefined;
+  const related = article.relatedSlug ? await getArticleBySlug(article.relatedSlug) : undefined;
+  const [comments, user] = await Promise.all([getCommentsForArticle(slug), getCurrentUser()]);
+  const bookmarked = user ? await isBookmarked(user.id, slug) : false;
 
   return (
     <>
@@ -40,8 +46,15 @@ export default async function ArticlePage({ params }: PageProps) {
         <ArticleHero imageUrl={article.heroImageUrl} imageAlt={article.heroImageAlt} />
         <section className="max-w-[1180px] mx-auto px-[26px] md:-mt-24 relative z-20">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-[40px]">
-            <ArticleBody article={article} />
+            <ArticleBody
+              article={article}
+              initiallyBookmarked={bookmarked}
+              loggedIn={Boolean(user)}
+            />
             <ArticleSidebar breakdown={article.breakdown} related={related} />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-[40px] mt-[40px]">
+            <CommentSection comments={comments} loggedIn={Boolean(user)} slug={slug} />
           </div>
         </section>
       </main>

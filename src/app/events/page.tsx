@@ -9,13 +9,13 @@ import { getEvents } from "@/lib/events";
 
 export const metadata: Metadata = {
   title: "Events — Spread",
-  description: "What's happening at the University of Ibadan, verified and on the record.",
+  description: "What's happening at University of Ibadan, verified and on the record.",
 };
 
 const DELAYS: Array<"delay-100" | "delay-200" | undefined> = [undefined, "delay-100", "delay-200"];
 
-export default function EventsPage() {
-  const events = getEvents();
+export default async function EventsPage() {
+  const events = await getEvents();
 
   return (
     <>

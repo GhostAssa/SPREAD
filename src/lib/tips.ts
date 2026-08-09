@@ -1,7 +1,4 @@
-import fs from "node:fs";
-import path from "node:path";
-
-const DATA_PATH = path.join(process.cwd(), "src", "data", "tips.json");
+import { prisma } from "@/lib/prisma";
 
 export type Tip = {
   id: string;
@@ -10,27 +7,28 @@ export type Tip = {
   message: string;
   evidenceUrl?: string;
   receivedAt: string;
+  userId?: string;
 };
 
-export function getTips(): Tip[] {
-  if (!fs.existsSync(DATA_PATH)) return [];
-  return JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
+export async function getTips(): Promise<Tip[]> {
+  const rows = await prisma.tip.findMany({ orderBy: { receivedAt: "desc" } });
+  return rows.map((r) => ({
+    ...r,
+    evidenceUrl: r.evidenceUrl ?? undefined,
+    userId: r.userId ?? undefined,
+  }));
 }
 
-export function addTip(tip: Tip): void {
-  const tips = getTips();
-  tips.unshift(tip);
-  fs.writeFileSync(DATA_PATH, JSON.stringify(tips, null, 2) + "\n", "utf-8");
+export async function addTip(tip: Tip): Promise<void> {
+  await prisma.tip.create({
+    data: { ...tip, evidenceUrl: tip.evidenceUrl ?? null, userId: tip.userId ?? null },
+  });
 }
 
-export function deleteTip(id: string): void {
-  fs.writeFileSync(
-    DATA_PATH,
-    JSON.stringify(
-      getTips().filter((t) => t.id !== id),
-      null,
-      2
-    ) + "\n",
-    "utf-8"
-  );
+export async function deleteTip(id: string): Promise<void> {
+  await prisma.tip.deleteMany({ where: { id } });
+}
+
+export async function countTipsByUser(userId: string): Promise<number> {
+  return prisma.tip.count({ where: { userId } });
 }

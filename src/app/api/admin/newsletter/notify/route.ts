@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   const body = await request.json();
   const slug = typeof body.slug === "string" ? body.slug : "";
 
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
   if (!article) {
     return NextResponse.json({ error: "Article not found" }, { status: 404 });
   }

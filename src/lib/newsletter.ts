@@ -1,29 +1,22 @@
-import fs from "node:fs";
-import path from "node:path";
-
-const DATA_PATH = path.join(process.cwd(), "src", "data", "newsletter-subscribers.json");
+import { prisma } from "@/lib/prisma";
 
 export type Subscriber = { email: string; subscribedAt: string };
 
-export function getSubscribers(): Subscriber[] {
-  if (!fs.existsSync(DATA_PATH)) return [];
-  return JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
+export async function getSubscribers(): Promise<Subscriber[]> {
+  return prisma.subscriber.findMany({ orderBy: { subscribedAt: "desc" } });
 }
 
-function writeSubscribers(subscribers: Subscriber[]): void {
-  fs.writeFileSync(DATA_PATH, JSON.stringify(subscribers, null, 2) + "\n", "utf-8");
-}
-
-export function addSubscriber(email: string): { added: boolean } {
-  const subscribers = getSubscribers();
-  if (subscribers.some((s) => s.email === email)) return { added: false };
-  subscribers.unshift({ email, subscribedAt: new Date().toISOString() });
-  writeSubscribers(subscribers);
+export async function addSubscriber(email: string): Promise<{ added: boolean }> {
+  const existing = await prisma.subscriber.findUnique({ where: { email } });
+  if (existing) return { added: false };
+  await prisma.subscriber.create({
+    data: { email, subscribedAt: new Date().toISOString() },
+  });
   return { added: true };
 }
 
-export function removeSubscriber(email: string): void {
-  writeSubscribers(getSubscribers().filter((s) => s.email !== email));
+export async function removeSubscriber(email: string): Promise<void> {
+  await prisma.subscriber.deleteMany({ where: { email } });
 }
 
 // Signed unsubscribe links: HMAC over the email using the Resend API key as

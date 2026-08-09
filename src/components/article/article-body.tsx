@@ -6,9 +6,11 @@ import type { Article } from "@/lib/types";
 
 type ArticleBodyProps = {
   article: Article;
+  loggedIn: boolean;
+  initiallyBookmarked: boolean;
 };
 
-export function ArticleBody({ article }: ArticleBodyProps) {
+export function ArticleBody({ article, loggedIn, initiallyBookmarked }: ArticleBodyProps) {
   return (
     <div className="md:col-span-8 bg-cream p-8 md:p-12 shadow-ink-md border-2 border-ink-band rounded-xl">
       <div className="flex items-center gap-3 mb-6 flex-wrap">
@@ -17,11 +19,18 @@ export function ArticleBody({ article }: ArticleBodyProps) {
         >
           {article.category}
         </span>
-        {article.verified && (
-          <div className="flex items-center gap-1 text-tertiary">
-            <Icon name="verified" filled className="text-[18px]" />
-            <span className="text-label-sm font-label-sm uppercase">Human Verified</span>
+        {article.source === "community" ? (
+          <div className="flex items-center gap-1 text-moss">
+            <Icon name="verified_user" filled className="text-[18px]" />
+            <span className="text-label-sm font-label-sm uppercase">AI-Screened Community Report</span>
           </div>
+        ) : (
+          article.verified && (
+            <div className="flex items-center gap-1 text-tertiary">
+              <Icon name="verified" filled className="text-[18px]" />
+              <span className="text-label-sm font-label-sm uppercase">Human Verified</span>
+            </div>
+          )
         )}
       </div>
 
@@ -31,8 +40,12 @@ export function ArticleBody({ article }: ArticleBodyProps) {
 
       <div className="flex items-center justify-between border-b-2 border-dashed border-ink-band pb-6 mb-8 flex-wrap gap-4">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-sand shadow-ink-sm border-2 border-ink-band overflow-hidden relative">
-            <Image alt={article.authorName} className="object-cover" fill src={article.authorAvatarUrl} />
+          <div className="w-12 h-12 rounded-full bg-sand shadow-ink-sm border-2 border-ink-band overflow-hidden relative flex items-center justify-center">
+            {article.authorAvatarUrl ? (
+              <Image alt={article.authorName} className="object-cover" fill src={article.authorAvatarUrl} />
+            ) : (
+              <Icon name="person" className="text-ink-band" />
+            )}
           </div>
           <div>
             <p className="text-note font-note text-ink-band">By {article.authorName}</p>
@@ -41,7 +54,13 @@ export function ArticleBody({ article }: ArticleBodyProps) {
             </p>
           </div>
         </div>
-        <ArticleActions excerpt={article.excerpt} slug={article.slug} title={article.title} />
+        <ArticleActions
+          excerpt={article.excerpt}
+          initiallyBookmarked={initiallyBookmarked}
+          loggedIn={loggedIn}
+          slug={article.slug}
+          title={article.title}
+        />
       </div>
 
       <div className="max-w-none text-body-lg font-body-lg text-body-ink space-y-6">

@@ -1,0 +1,142 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Dates are stored as ISO-8601 strings (not native DateTime) to match the
+// exact string-based behavior the app already relies on (e.g. localeCompare
+// sorting, direct JSON round-tripping) from the previous JSON-file storage.
+
+model Article {
+  slug             String   @id
+  size             String // "feature" | "compact"
+  theme            String // "light" | "dark"
+  category         String
+  chipColor        String
+  verified         Boolean
+  title            String
+  excerpt          String
+  authorName       String
+  authorAvatarUrl  String
+  publishedAtLabel String
+  timeAgoLabel     String
+  heroImageUrl     String?
+  heroImageAlt     String
+  body             Json // ArticleBlock[]
+  breakdown        String[]
+  relatedSlug      String?
+  source           String? // "editorial" | "community"
+  submissionId     String?
+  sortOrder        Int      @default(autoincrement())
+}
+
+model Fact {
+  id        String @id
+  status    String // "verified" | "debunked"
+  category  String
+  chipColor String
+  title     String
+  body      String
+  sources   String[]
+  sortOrder Int      @default(autoincrement())
+}
+
+model CampusEvent {
+  slug        String @id
+  title       String
+  date        String // ISO date
+  location    String
+  category    String
+  chipColor   String
+  description String
+  sortOrder   Int    @default(autoincrement())
+}
+
+model Tip {
+  id          String  @id
+  category    String
+  urgency     String
+  message     String
+  evidenceUrl String?
+  receivedAt  String
+  userId      String?
+  user        User?   @relation(fields: [userId], references: [id])
+}
+
+model ContactMessage {
+  id         String @id
+  name       String
+  email      String
+  message    String
+  receivedAt String
+}
+
+model Subscriber {
+  email        String @id
+  subscribedAt String
+}
+
+// Singleton row (id always "singleton") holding the homepage ticker/breaking-news copy.
+model SiteSettings {
+  id                String   @id @default("singleton")
+  tickerItems       String[]
+  breakingHeadlines String[]
+}
+
+model User {
+  id                 String           @id
+  name               String
+  email              String           @unique
+  passwordHash       String
+  walletBalanceNaira Int              @default(0)
+  subscribed         Boolean          @default(false)
+  sessionVersion     Int              @default(1)
+  createdAt          String
+  submissions        NewsSubmission[]
+  comments           Comment[]
+  bookmarks          Bookmark[]
+  tips               Tip[]
+}
+
+model NewsSubmission {
+  id                String  @id
+  userId            String
+  user              User    @relation(fields: [userId], references: [id])
+  authorName        String
+  title             String
+  body              String
+  evidenceNote      String
+  status            String // "verified" | "rejected"
+  aiReason          String
+  payoutNaira       Int
+  submittedAt       String
+  articleSlug       String?
+  overriddenByAdmin Boolean @default(false)
+}
+
+model Comment {
+  id          String @id
+  articleSlug String
+  userId      String
+  user        User   @relation(fields: [userId], references: [id])
+  authorName  String
+  body        String
+  createdAt   String
+
+  @@index([articleSlug])
+}
+
+model Bookmark {
+  id          String @id
+  articleSlug String
+  userId      String
+  user        User   @relation(fields: [userId], references: [id])
+  createdAt   String
+
+  @@unique([userId, articleSlug])
+  @@index([articleSlug])
+}
